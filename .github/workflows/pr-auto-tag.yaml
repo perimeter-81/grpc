@@ -4,6 +4,7 @@ on:
     types: [opened, reopened, synchronize, edited]
 permissions:
   contents: read # to determine modified files (actions/labeler)
+  actions: read
 
 jobs:
   triage:
