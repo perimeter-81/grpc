@@ -102,3 +102,11 @@ jobs:
             We noticed that our 'sanity' test was going to fail, but we think we can fix that automatically, so we put together this PR to do just that!
 
             If you'd like to opt-out of these PR's, add yourself to NO_AUTOFIX_USERS in .github/workflows/pr-auto-fix.yaml
+
+      - name: Push metrics
+        if: always()
+        continue-on-error: true
+        uses: perimeter-81/actions/actions/monitoring/push_metrics@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
